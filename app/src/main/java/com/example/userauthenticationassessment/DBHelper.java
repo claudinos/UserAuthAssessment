@@ -6,6 +6,8 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import java.util.ArrayList;
+
 public class DBHelper extends SQLiteOpenHelper {
 
     private static  final int Database_Version=1;
@@ -41,7 +43,7 @@ public class DBHelper extends SQLiteOpenHelper {
         values.put(Column_Email,information.getEmail());
         values.put(Column_Pass,information.getPass());
 
-        db.insert(Table_Name,null,values);
+       db.insert(Table_Name,null,values);
         db.close();
     }
 
@@ -70,4 +72,17 @@ public class DBHelper extends SQLiteOpenHelper {
         db.execSQL(query);
         this.onCreate(db);
     }
+
+//    //----------------------Retrieving---------------------//
+//
+//    public ArrayList<String> getUser(){
+//        ArrayList<String>list=new ArrayList<>();
+//        SQLiteDatabase db=getReadableDatabase();
+//        Cursor cursor=db.query(DBHelper.Table_Name,new String[]{DBHelper.Column_Fname},null,null,null,null,null);
+//
+//        while (cursor.moveToNext()){
+//            list.add(cursor.getString(cursor.getColumnIndex(DBHelper.Table_Name)));
+//        }
+//        return list;
+//    }
 }
