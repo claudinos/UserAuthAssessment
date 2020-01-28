@@ -85,4 +85,9 @@ public class DBHelper extends SQLiteOpenHelper {
 //        }
 //        return list;
 //    }
+    public Cursor alldata(){
+        SQLiteDatabase db=this.getWritableDatabase();
+        Cursor cursor=db.rawQuery("select * from UserCredentials",null);
+        return  cursor;
+    }
 }
