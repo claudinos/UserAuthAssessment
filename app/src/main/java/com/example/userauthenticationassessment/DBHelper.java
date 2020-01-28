@@ -73,18 +73,6 @@ public class DBHelper extends SQLiteOpenHelper {
         this.onCreate(db);
     }
 
-//    //----------------------Retrieving---------------------//
-//
-//    public ArrayList<String> getUser(){
-//        ArrayList<String>list=new ArrayList<>();
-//        SQLiteDatabase db=getReadableDatabase();
-//        Cursor cursor=db.query(DBHelper.Table_Name,new String[]{DBHelper.Column_Fname},null,null,null,null,null);
-//
-//        while (cursor.moveToNext()){
-//            list.add(cursor.getString(cursor.getColumnIndex(DBHelper.Table_Name)));
-//        }
-//        return list;
-//    }
     public Cursor alldata(){
         SQLiteDatabase db=this.getWritableDatabase();
         Cursor cursor=db.rawQuery("select * from UserCredentials",null);

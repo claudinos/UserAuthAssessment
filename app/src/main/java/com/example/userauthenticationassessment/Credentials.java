@@ -12,8 +12,8 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class Credentials extends AppCompatActivity {
-    @BindView(R.id.EmailView)
-    TextView email;
+//    @BindView(R.id.EmailView)
+//    TextView email;
     DBHelper helper;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,7 +22,7 @@ public class Credentials extends AppCompatActivity {
         ButterKnife.bind(this);
         Intent intent=getIntent();
         String Email=intent.getStringExtra("name");
-        email.setText("Your Email is "+ Email);
+//        email.setText("Your Email is "+ Email);
         helper=new DBHelper(this);
         Cursor cursor=helper.alldata();
         if (cursor.getCount()==0){
